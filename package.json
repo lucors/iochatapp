@@ -4,7 +4,7 @@
   "description": "Electron based client for iochatserver",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/lucors/iochatapp/issues"
   },
-  "homepage": "https://github.com/lucors/iochatapp#readme"
+  "homepage": "https://github.com/lucors/iochatapp#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "electron": "^26.1.0"
+  }
 }

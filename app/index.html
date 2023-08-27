@@ -1,0 +1,93 @@
+﻿<html>
+<head>
+    <title>Socket.io Chat</title>
+    <meta charset="utf-8"/>
+    <meta name="theme-color" content="#36363c"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content='Online real-time chat built on Socket.io library'>
+    <meta name="keywords" content="websocket socket socket.io io chat lucors">
+    <link rel="shortcut icon" href="assets/img/favicon.png"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Libs -->
+    <script src="assets/js/lib/jquery.min.js"></script>
+    <script src="assets/js/lib/js.cookie.min.js"></script>
+    <script src="assets/js/lib/socket.io.min.js"></script>
+
+    <!-- Client logic -->
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/chat.js"></script>
+    <script src="assets/js/chat_commands.js"></script>
+    <script src="assets/js/mems.js"></script>
+    <script src="assets/js/rooms.js"></script>
+    <script src="assets/js/mobile.js"></script>
+    <script defer src="assets/js/run.js"></script>
+</head>
+
+<body>
+<div id="prompt-modal">
+    <div id="prompt-modal-content">
+        <div id="prompt-message"></div>
+
+        <div id="prompt-send-form" class="chat-style">
+            <input id="prompt-input" type="text" name="message" maxlength="2000">
+            <div id="prompt-send" class="flex-center">
+                <img src="assets/img/chat-send.svg">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="auth-wrapper">
+    <img id="wsc-logo" src="assets/img/ioclogo.svg">
+    <!-- Nickname Sending Form -->
+    <div id="auth-send-form" class="chat-style">
+        <input id="auth-input" type="text" name="message" maxlength="50" placeholder="Имя пользователя">
+        <div id="auth-send" class="flex-center">
+            <img src="assets/img/chat-send.svg">
+        </div>
+    </div>
+    <div id="auth-error"></div>
+</div>
+<div id="app-wrapper">
+    <div id="mobile-actions">
+        <div id="action-rooms" class="action">Комнаты</div>
+        <div id="action-members" class="action">Участники</div>
+    </div>
+    <!-- Rooms data -->
+    <div id="rooms-wrapper" class="app-row">
+        <div id="chat-rooms" class="flex-center chat-style"></div>
+        <div id="chat-clients-count-wrapper" class="flex-center">
+            <span id="chat-clients-count-title">Всего онлайн</span> <span id="chat-clients-count"></span>
+        </div>
+        <div id="chat-rooms-error" class="flex-center"></div>
+    </div>
+
+    <!-- Chat data -->
+    <div id="chat-wrapper" class="app-row">
+        <!-- Chat msg List -->
+        <div id="chat-messages" class="chat-style"></div>
+
+        <!-- Chat msg Sending Form -->
+        <div id="chat-send-form" class="chat-style">
+            <input id="chat-input-hint" type="text" name="message" maxlength="2000">
+            <input id="chat-input" type="text" name="message" maxlength="2000">
+            <div id="chat-send" class="flex-center">
+                <img src="assets/img/chat-send.svg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Members data -->
+    <div id="mems-wrapper" class="app-row">
+        <div id="chat-members" class="flex-center chat-style"></div>
+        <div id="chat-members-count-wrapper" class="flex-center">
+            <span id="chat-members-count-title">Офлайн</span> <span id="chat-members-count"></span>
+        </div>
+
+        <div id="chat-clients" class="hide flex-center chat-style"></div>
+    </div>
+</div>
+</body>
+</html>
